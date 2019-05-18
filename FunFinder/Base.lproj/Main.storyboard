@@ -57,10 +57,16 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y9d-J9-FYe">
                                 <rect key="frame" x="89" y="134" width="54" height="30"/>
                                 <state key="normal" title="Camera"/>
+                                <connections>
+                                    <action selector="cameraTapped:" destination="qeS-J6-4Um" eventType="touchUpInside" id="8DC-3r-MRn"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b42-7X-AeP">
                                 <rect key="frame" x="269" y="134" width="92" height="30"/>
                                 <state key="normal" title="Photo Library"/>
+                                <connections>
+                                    <action selector="photoLibraryTapped:" destination="qeS-J6-4Um" eventType="touchUpInside" id="RVX-18-Iig"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fhs-W2-1Wr">
                                 <rect key="frame" x="190" y="513" width="34" height="30"/>
@@ -95,6 +101,9 @@
                         <viewLayoutGuide key="safeArea" id="Eit-hP-gDo"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add New Photo" id="DB2-gp-nhF"/>
+                    <connections>
+                        <outlet property="imageView" destination="ykS-vh-cv4" id="n6R-fR-8bh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dBN-M1-FNE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

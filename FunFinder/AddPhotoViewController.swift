@@ -8,23 +8,41 @@
 
 import UIKit
 
-class AddPhotoViewController: UIViewController {
+class AddPhotoViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate
+//these delegate functions from Apple that would otherwise take forever for us to figure out how to code
+    {
 
+    var imagePicker = UIImagePickerController()
+    
+    @IBOutlet weak var imageView: UIImageView!
+    
+    
     override func viewDidLoad() {
+    //viewDidLoad is the function that shows up when the app fires for the first time
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        imagePicker.delegate = self
+    //self refers to the current class we are in
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func photoLibraryTapped(_ sender: UIButton) {
+    //imagePicker is the object I set up in line 15
+        imagePicker.sourceType = .photoLibrary
+        present(imagePicker, animated: true, completion: nil)
     }
-    */
+    
+    @IBAction func cameraTapped(_ sender: UIButton) {
+        imagePicker.sourceType = .camera
+        present(imagePicker, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let selectedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            imageView.image = selectedImage
+        }
+        // update our photo w/selected photo
+        
+        imagePicker.dismiss(animated: true, completion: nil)
+        // go back to our ViewController and present the selected photo for the user to see
+    }
 
 }
