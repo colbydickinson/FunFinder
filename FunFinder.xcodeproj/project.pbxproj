@@ -13,6 +13,7 @@
 		366D2BD72290996A00C6C316 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 366D2BD62290996A00C6C316 /* Assets.xcassets */; };
 		366D2BDA2290996A00C6C316 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 366D2BD82290996A00C6C316 /* LaunchScreen.storyboard */; };
 		366D2BE22290A52B00C6C316 /* AddPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366D2BE12290A52B00C6C316 /* AddPhotoViewController.swift */; };
+		36A2891E2290DA680051E9CA /* PhotoTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A2891D2290DA680051E9CA /* PhotoTableTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		366D2BD92290996A00C6C316 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		366D2BDB2290996A00C6C316 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		366D2BE12290A52B00C6C316 /* AddPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhotoViewController.swift; sourceTree = "<group>"; };
+		36A2891D2290DA680051E9CA /* PhotoTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTableTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			children = (
 				366D2BCC2290996900C6C316 /* AppDelegate.swift */,
 				366D2BD02290996900C6C316 /* Main.storyboard */,
+				36A2891D2290DA680051E9CA /* PhotoTableTableViewController.swift */,
 				366D2BE12290A52B00C6C316 /* AddPhotoViewController.swift */,
 				366D2BD62290996A00C6C316 /* Assets.xcassets */,
 				366D2BD82290996A00C6C316 /* LaunchScreen.storyboard */,
@@ -141,6 +144,7 @@
 				366D2BCD2290996900C6C316 /* AppDelegate.swift in Sources */,
 				366D2BE22290A52B00C6C316 /* AddPhotoViewController.swift in Sources */,
 				366D2BD52290996900C6C316 /* FunFinder.xcdatamodeld in Sources */,
+				36A2891E2290DA680051E9CA /* PhotoTableTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

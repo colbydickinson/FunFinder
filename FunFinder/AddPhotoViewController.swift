@@ -16,6 +16,7 @@ class AddPhotoViewController: UIViewController, UIImagePickerControllerDelegate,
     
     @IBOutlet weak var imageView: UIImageView!
     
+    @IBOutlet weak var captionText: UITextField!
     
     override func viewDidLoad() {
     //viewDidLoad is the function that shows up when the app fires for the first time
@@ -35,9 +36,29 @@ class AddPhotoViewController: UIViewController, UIImagePickerControllerDelegate,
         present(imagePicker, animated: true, completion: nil)
     }
     
+    @IBAction func saveTapped(_ sender: UIButton) {
+        if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
+            
+            let photoToSave = Photos(entity: Photos.entity(), insertInto: context)
+            photoToSave.caption = captionText.text
+            
+            if let userImage = imageView.image {
+                if let userImageData = userImage.pngData() {
+                    photoToSave.imageData = userImageData
+                }
+            }
+            (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
+            
+            navigationController?.popViewController(animated: true)
+            
+    }
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        print("!!!!")
         if let selectedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            print("???")
+            print(selectedImage)
             imageView.image = selectedImage
+            
         }
         // update our photo w/selected photo
         
@@ -45,4 +66,5 @@ class AddPhotoViewController: UIViewController, UIImagePickerControllerDelegate,
         // go back to our ViewController and present the selected photo for the user to see
     }
 
+}
 }

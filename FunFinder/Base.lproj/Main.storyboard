@@ -13,7 +13,7 @@
         <!--Fun Finder-->
         <scene sceneID="SkL-g4-LTN">
             <objects>
-                <tableViewController id="Quf-1X-rcZ" sceneMemberID="viewController">
+                <tableViewController id="Quf-1X-rcZ" customClass="PhotoTableTableViewController" customModule="FunFinder" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="T9r-fE-pNe">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -54,15 +54,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y9d-J9-FYe">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y9d-J9-FYe">
                                 <rect key="frame" x="89" y="134" width="54" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Camera"/>
                                 <connections>
                                     <action selector="cameraTapped:" destination="qeS-J6-4Um" eventType="touchUpInside" id="8DC-3r-MRn"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b42-7X-AeP">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b42-7X-AeP">
                                 <rect key="frame" x="269" y="134" width="92" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Photo Library"/>
                                 <connections>
                                     <action selector="photoLibraryTapped:" destination="qeS-J6-4Um" eventType="touchUpInside" id="RVX-18-Iig"/>
@@ -72,9 +74,13 @@
                                 <rect key="frame" x="190" y="513" width="34" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveTapped:" destination="qeS-J6-4Um" eventType="touchUpInside" id="4ky-sX-P2I"/>
+                                </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="download" translatesAutoresizingMaskIntoConstraints="NO" id="ykS-vh-cv4">
-                                <rect key="frame" x="70" y="204" width="274" height="183"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="download" translatesAutoresizingMaskIntoConstraints="NO" id="ykS-vh-cv4">
+                                <rect key="frame" x="69" y="204" width="275" height="183"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OsC-oH-iKr">
                                 <rect key="frame" x="89" y="433" width="238" height="30"/>
@@ -85,23 +91,11 @@
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="Y9d-J9-FYe" firstAttribute="top" secondItem="BBP-Rm-zPw" secondAttribute="topMargin" constant="46" id="9d2-lC-uGJ"/>
-                            <constraint firstItem="ykS-vh-cv4" firstAttribute="top" secondItem="b42-7X-AeP" secondAttribute="bottom" constant="40" id="Gt1-Nc-gcg"/>
-                            <constraint firstItem="ykS-vh-cv4" firstAttribute="top" secondItem="BBP-Rm-zPw" secondAttribute="topMargin" constant="116" id="Lvm-BA-YI8"/>
-                            <constraint firstItem="ykS-vh-cv4" firstAttribute="leading" secondItem="Eit-hP-gDo" secondAttribute="leading" constant="70" id="Sw3-8c-cUy"/>
-                            <constraint firstItem="ykS-vh-cv4" firstAttribute="centerX" secondItem="BBP-Rm-zPw" secondAttribute="centerX" id="VFQ-NW-Wbz"/>
-                            <constraint firstItem="b42-7X-AeP" firstAttribute="top" secondItem="BBP-Rm-zPw" secondAttribute="topMargin" constant="46" id="eQT-Wh-T1r"/>
-                            <constraint firstItem="Y9d-J9-FYe" firstAttribute="leading" secondItem="Eit-hP-gDo" secondAttribute="leading" constant="89" id="iRp-gV-8bD"/>
-                            <constraint firstItem="Eit-hP-gDo" firstAttribute="trailing" secondItem="ykS-vh-cv4" secondAttribute="trailing" constant="70" id="npk-nL-CFc"/>
-                            <constraint firstItem="ykS-vh-cv4" firstAttribute="top" secondItem="Y9d-J9-FYe" secondAttribute="bottom" constant="40" id="vQw-sE-mnh"/>
-                            <constraint firstItem="b42-7X-AeP" firstAttribute="leading" secondItem="Y9d-J9-FYe" secondAttribute="trailing" constant="126" id="wSq-4x-5ny"/>
-                            <constraint firstItem="Eit-hP-gDo" firstAttribute="trailing" secondItem="b42-7X-AeP" secondAttribute="trailing" constant="53" id="y6Y-Kn-0XS"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Eit-hP-gDo"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add New Photo" id="DB2-gp-nhF"/>
                     <connections>
+                        <outlet property="captionText" destination="OsC-oH-iKr" id="4gV-nH-DNN"/>
                         <outlet property="imageView" destination="ykS-vh-cv4" id="n6R-fR-8bh"/>
                     </connections>
                 </viewController>
